@@ -11,7 +11,7 @@ use App\Models\User;
 
 class ChatroomTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
 
     private $user;
 

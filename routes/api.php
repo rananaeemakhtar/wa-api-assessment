@@ -6,6 +6,19 @@ use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * @OA\Info(
+ *     title="Chat Application API",
+ *     version="1.0.0",
+ *     description="API for managing chatrooms and messages.",
+ *     @OA\Contact(
+ *         name="Support",
+ *         email="support@example.com"
+ *     )
+ * )
+ */
+
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');

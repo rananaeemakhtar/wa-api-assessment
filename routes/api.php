@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ChatroomController;
+use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,4 +14,6 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::post('chatrooms', [ChatroomController::class, 'store']);
     Route::post('chatrooms/{chatroom}/enter', [ChatroomController::class, 'enter'])->name('chatrooms.enter');
     Route::post('chatrooms/{chatroom}/leave', [ChatroomController::class, 'leave'])->name('chatrooms.leave');
+    
+    Route::post('chatrooms/{chatroom}/messages', [MessageController::class, 'store'])->name('messages.store');
 });
